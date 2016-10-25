@@ -3,5 +3,5 @@
 ## How to Run
 To open website, type
 ```bash
-open index.html
+docker run tbartlet/mini-project-ubuntu
 ```
