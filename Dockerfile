@@ -1,17 +1,16 @@
 FROM ubuntu:latest
 MAINTAINER Tamara Bartlett
 
-CMD apt-get update
-CMD apt-get install sudo
-CMD sudo apt-get install curl -y
-CMD sudo apt-get install git -y
-CMD curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-CMD sudo apt-get install -y nodejs
+COPY src /usr/local/bin/src/
+WORKDIR /usr/local/bin/src
+CMD ls
 
-CMD git clone https://github.com/tamarabartlett/dev-ops-mini-project.git
-CMD cd cd dev-ops-mini-project/
+RUN apt-get update
+RUN apt-get install -y sudo curl git
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
 
 EXPOSE 8080
-CMD [ "node", "web_server.js" ]
+RUN node web_server.js
 
-CMD echo "TEST"
+RUN echo "TEST"
