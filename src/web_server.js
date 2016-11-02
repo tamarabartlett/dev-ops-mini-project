@@ -12,4 +12,4 @@ var server = http.createServer(function(request, response) {
 });
 
 server.listen(8080);
-console.log("Server is listening");
+console.log("Server is listening. Please visit http://localhost:8080/ in the browser");

@@ -1,0 +1,6 @@
+mini-project: 
+    image: tbartlet/mini-project-ubuntu
+    container_name: mini-project
+    ports:
+        - "8080:8080"
+    command: node web_server.js
